@@ -47,17 +47,12 @@ def get_config(filename, _me):
     with open(filename, 'r') as csvfile:
         reader = csv.DictReader(decomment(csvfile), delimiter=';')
 
-        print(reader)
-        print(dir(reader))
-        print(reader.fieldnames)
-
         for row in reader:
             _e = {}
 
             for col in reader.fieldnames:
                 print("{} = {}".format(col, row[col]))
                 _e.update({col: row[col]})
-            print(_e)
             lld_array.append(_e)
 
     return lld_array
@@ -85,7 +80,6 @@ def main():
     lld_array = get_config(_args.configfile, _me)
 
     if _args.verbosity:
-        print(config)
         print(_args)
 
     OUTPUT = _me + ".lld"
