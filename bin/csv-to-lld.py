@@ -47,12 +47,13 @@ def get_config(filename, _me):
     with open(filename, 'r') as csvfile:
         reader = csv.DictReader(decomment(csvfile), delimiter=';')
 
+        zbxnames = [ s.replace('{','{#') for s in reader.fieldnames ]
+
         for row in reader:
             _e = {}
 
-            for col in reader.fieldnames:
-                print("{} = {}".format(col, row[col]))
-                _e.update({col: row[col]})
+            for col, zbxcol in zip(reader.fieldnames, zbxnames):
+                _e.update({zbxcol: row[col]})
             lld_array.append(_e)
 
     return lld_array
