@@ -53,7 +53,8 @@ def get_config(filename, _me):
             _e = {}
 
             for col, zbxcol in zip(reader.fieldnames, zbxnames):
-                _e.update({zbxcol: row[col]})
+                if row[col]:
+                    _e.update({zbxcol: row[col]})
             lld_array.append(_e)
 
     return lld_array
