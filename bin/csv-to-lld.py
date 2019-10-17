@@ -75,7 +75,7 @@ def main():
                          help="zabbix hostname that has the oradb.lld rule")
     _parser.add_argument("-s", "--server", action="store", default="localhost",
                          help="zabbix server or proxy name")
-    _parser.add_argument("-p", "--port", action="store", default="10050",
+    _parser.add_argument("-p", "--port", action="store", default="10051",
                          help="port of zabbix server of proxy to send to")
     _args = _parser.parse_args()
 
