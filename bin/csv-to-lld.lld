@@ -1,0 +1,1 @@
+host oradb.lld {"data":[{"{$HEAD1}": "row1.1", "{$HEAD2}": "row1.2", "{$HEAD3}": "row1.3"}, {"{$HEAD1}": "row2.1", "{$HEAD2}": "", "{$HEAD3}": "row2.3"}]}
