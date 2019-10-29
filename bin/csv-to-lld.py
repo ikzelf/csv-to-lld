@@ -87,7 +87,9 @@ def main():
     OUTPUT = _me + ".lld"
 
     if _args.zabbix_host:
-        array = str(_args.zabbix_host) + ' ' + _args.lld_key + \
+        if _args.verbosity:
+            print("Writing to {}".format(OUTPUT))
+        array = '\"' + str(_args.zabbix_host) + '\" \"' + _args.lld_key + '\"' \
             ' ' + '{\"data\":' + json.dumps(lld_array) + '}'
         F = open(OUTPUT, "w")
         F.write(array)
